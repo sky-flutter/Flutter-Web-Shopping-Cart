@@ -1,0 +1,101 @@
+[
+  {
+    "family": "MaterialIcons",
+    "fonts": [
+      {
+        "asset": "https://fonts.gstatic.com/s/materialicons/v42/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2"
+      }
+    ]
+  },
+  {
+    "family": "HelveticaNeue",
+    "fonts": [
+      {
+        "asset": "fonts/HelveticaNeue/HelveticaNeueLt.ttf"
+      }
+    ]
+  },
+  {
+    "family": "HelveticaNeueRegular",
+    "fonts": [
+      {
+        "asset": "fonts/HelveticaNeue/HelveticaNeue-Regular.ttf"
+      }
+    ]
+  },
+  {
+    "family": "HelveticaNeueMedium",
+    "fonts": [
+      {
+        "asset": "fonts/HelveticaNeue/HelveticaNeueMed.ttf"
+      }
+    ]
+  },
+  {
+    "family": "HelveticaNeueBold",
+    "fonts": [
+      {
+        "asset": "fonts/HelveticaNeue/HelveticaNeue-Bold.ttf"
+      }
+    ]
+  },
+  {
+    "family": "Arvo",
+    "fonts": [
+      {
+        "asset": "fonts/Arvo/Arvo-Regular.ttf"
+      },
+      {
+        "asset": "fonts/Arvo/Arvo-Bold.ttf"
+      }
+    ]
+  },
+  {
+    "family": "GoogleSans",
+    "fonts": [
+      {
+        "asset": "fonts/GoogleSans-Regular.ttf"
+      }
+    ]
+  },
+  {
+    "family": "GalleryIcons",
+    "fonts": [
+      {
+        "asset": "fonts/GalleryIcons.ttf"
+      }
+    ]
+  },
+  {
+    "family": "AbrilFatface",
+    "fonts": [
+      {
+        "asset": "fonts/AbrilFatface-Regular.ttf"
+      }
+    ]
+  },
+  {
+    "family": "LibreFranklin",
+    "fonts": [
+      {
+        "asset": "fonts/LibreFranklin-Regular.ttf"
+      }
+    ]
+  },
+  {
+    "family": "Merriweather",
+    "fonts": [
+      {
+        "asset": "fonts/Merriweather-Regular.ttf"
+      }
+    ]
+  },
+  {
+    "family": "Raleway",
+    "fonts": [
+      {
+        "asset": "fonts/Raleway-Regular.ttf"
+      }
+    ]
+  }
+]
