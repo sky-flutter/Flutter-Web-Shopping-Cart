@@ -11,6 +11,6 @@ class ResponsiveLayout {
   }
 
   static bool isLargeScreen(context) {
-    return MediaQuery.of(context).size.width > 800;
+    return MediaQuery.of(context).size.width > 1200;
   }
 }

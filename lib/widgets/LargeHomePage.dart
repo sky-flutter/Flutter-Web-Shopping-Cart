@@ -3,6 +3,7 @@ import 'package:ShoppingCart/pages/header.dart';
 import 'package:ShoppingCart/pages/home_slider.dart';
 import 'package:ShoppingCart/utils/CustomColors.dart';
 import 'package:ShoppingCart/utils/CustomTextStyle.dart';
+import 'package:ShoppingCart/utils/MenuItem.dart';
 import 'package:ShoppingCart/utils/ResponsiveLayout.dart';
 import 'package:ShoppingCart/utils/ScreenLayout.dart';
 import 'package:flutter_web/material.dart';
@@ -41,7 +42,7 @@ class _LargeHomePageState extends State<LargeHomePage> {
             Stack(
               children: <Widget>[
                 HomeSlider(context),
-                Header(context),
+                Header(context,MenuItem.MENU_HOME),
               ],
             ),
             gridProductSection(context),

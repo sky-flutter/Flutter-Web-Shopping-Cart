@@ -1,29 +1,34 @@
 import 'package:ShoppingCart/utils/CustomTextStyle.dart';
+import 'package:ShoppingCart/utils/MenuItem.dart';
 import 'package:ShoppingCart/utils/ResponsiveLayout.dart';
 import 'package:flutter_web/material.dart';
 
 import '../about_us.dart';
+import '../cart.dart';
 import '../login.dart';
 
-class Header extends StatelessWidget{
+class Header extends StatelessWidget {
   double sliderHeight = 500;
-  double sliderHeaderFontSize=60;
+  double sliderHeaderFontSize = 60;
   List<String> listImage = List();
+  String _keyMenu;
   List<String> listBannerTitle = List();
-  Header(BuildContext context){
+
+  Header(BuildContext context, String keyMenu) {
     setUp(context);
+    _keyMenu = keyMenu;
   }
 
-  setUp(context){
+  setUp(context) {
     if (ResponsiveLayout.isLargeScreen(context)) {
-      sliderHeight = MediaQuery.of(context).size.height/2;
-      sliderHeaderFontSize=60;
+      sliderHeight = MediaQuery.of(context).size.height / 2;
+      sliderHeaderFontSize = 60;
     } else if (ResponsiveLayout.isMediumScreen(context)) {
-      sliderHeight = MediaQuery.of(context).size.height/2;
-      sliderHeaderFontSize=30;
+      sliderHeight = MediaQuery.of(context).size.height / 2;
+      sliderHeaderFontSize = 30;
     } else {
-      sliderHeight = MediaQuery.of(context).size.height/2;
-      sliderHeaderFontSize=20;
+      sliderHeight = MediaQuery.of(context).size.height / 2;
+      sliderHeaderFontSize = 20;
     }
   }
 
@@ -33,7 +38,7 @@ class Header extends StatelessWidget{
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Container(
-          margin: EdgeInsets.only(top: 8,bottom: 8),
+          margin: EdgeInsets.only(top: 8, bottom: 8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -78,14 +83,22 @@ class Header extends StatelessWidget{
             ),
             padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           ),
-          Container(
-            child: Text(
-              "Cart",
-              style: CustomTextStyle.boldTextStyle.copyWith(
-                color: Colors.black,
+          GestureDetector(
+            onTap: () {
+              if (_keyMenu != MenuItem.MENU_CART) {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Cart()));
+              }
+            },
+            child: Container(
+              child: Text(
+                "Cart",
+                style: CustomTextStyle.boldTextStyle.copyWith(
+                  color: Colors.black,
+                ),
               ),
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
             ),
-            padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           ),
           Container(
             child: Text(
@@ -97,8 +110,11 @@ class Header extends StatelessWidget{
             padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           ),
           GestureDetector(
-            onTap: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>AboutUs()));
+            onTap: () {
+              if (_keyMenu != MenuItem.MENU_ABOUT) {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => AboutUs()));
+              }
             },
             child: Container(
               child: Text(
@@ -120,8 +136,9 @@ class Header extends StatelessWidget{
             padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           ),
           GestureDetector(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Login()));
             },
             child: Container(
               margin: EdgeInsets.only(right: 48),
@@ -139,13 +156,13 @@ class Header extends StatelessWidget{
     } else {
       return Row(
         children: <Widget>[
-          IconButton(icon: Icon(Icons.menu), onPressed: (){
-            Scaffold.of(context).openEndDrawer();
-          })
+          IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              })
         ],
       );
     }
   }
-
-
 }

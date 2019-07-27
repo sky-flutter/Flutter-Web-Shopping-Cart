@@ -2,6 +2,7 @@ import 'package:ShoppingCart/pages/drawer_menu.dart';
 import 'package:ShoppingCart/pages/footer.dart';
 import 'package:ShoppingCart/pages/header.dart';
 import 'package:ShoppingCart/utils/CustomTextStyle.dart';
+import 'package:ShoppingCart/utils/MenuItem.dart';
 import 'package:ShoppingCart/utils/ResponsiveLayout.dart';
 import 'package:flutter_web/material.dart';
 
@@ -24,7 +25,7 @@ class AboutUs extends StatelessWidget {
       body: Builder(builder: (context) {
         return ListView(
           children: <Widget>[
-            Header(context),
+            Header(context,MenuItem.MENU_ABOUT),
             slider(),
             GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
