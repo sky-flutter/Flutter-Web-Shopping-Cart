@@ -27,11 +27,11 @@ class Search extends StatelessWidget {
     
     return Scaffold(
       key: keyScaffold,
-      endDrawer: DrawerMenu(MenuItem.MENU_ABOUT),
+      endDrawer: DrawerMenu(MenuItem.MENU_SEARCH),
       body: Builder(builder: (context) {
         return ListView(
           children: <Widget>[
-            Header(context,MenuItem.MENU_ABOUT),
+            Header(context,MenuItem.MENU_SEARCH),
             searchSection(),
             Footer()
           ],

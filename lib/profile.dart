@@ -23,11 +23,11 @@ class Profile extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       key: keyScaffold,
-      endDrawer: DrawerMenu(MenuItem.MENU_ABOUT),
+      endDrawer: DrawerMenu(MenuItem.MENU_PROFILE),
       body: Builder(builder: (context) {
         return ListView(
           children: <Widget>[
-            Header(context, MenuItem.MENU_ABOUT),
+            Header(context, MenuItem.MENU_PROFILE),
             slider(),
             profileSection(context),
             Footer()
