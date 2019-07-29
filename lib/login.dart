@@ -21,7 +21,7 @@ class LoginState extends State<Login> {
               children: <Widget>[
                 Expanded(
                   child: Container(),
-                  flex: 20,
+                  flex: 10,
                 ),
                 Expanded(
                   child: Container(
@@ -141,7 +141,7 @@ class LoginState extends State<Login> {
                       ],
                     ),
                   ),
-                  flex: 70,
+                  flex: 80,
                 ),
                 Expanded(
                   child: Container(),

@@ -1,16 +1,29 @@
 import 'package:ShoppingCart/utils/CustomColors.dart';
 import 'package:ShoppingCart/utils/CustomTextStyle.dart';
+import 'package:ShoppingCart/utils/MenuItem.dart';
 import 'package:flutter_web/material.dart';
 
+import '../about_us.dart';
+import '../cart.dart';
+import '../contact_us.dart';
+import '../home.dart';
 import '../login.dart';
+import '../profile.dart';
+import '../search.dart';
 
-class DrawerMenu extends StatelessWidget{
+class DrawerMenu extends StatelessWidget {
+  String _keyMenu;
+  DrawerMenu(String menu_home) {
+    _keyMenu = menu_home;
+  }
+
   @override
   Widget build(BuildContext context) {
     return createDrawer(context);
   }
-  createDrawer(context){
-    return  Drawer(
+
+  createDrawer(context) {
+    return Drawer(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -25,13 +38,28 @@ class DrawerMenu extends StatelessWidget{
                       color: CustomColors.THEME_COLOR,
                       image: DecorationImage(image: AssetImage("ic_logo.png"))),
                 ),
-                SizedBox(height: 16,),
-                Text("Grocery Fact",style: CustomTextStyle.boldTextStyle.copyWith(color: Colors.white,fontSize: 20),)
+                SizedBox(
+                  height: 16,
+                ),
+                Text(
+                  "Grocery Fact",
+                  style: CustomTextStyle.boldTextStyle
+                      .copyWith(color: Colors.white, fontSize: 20),
+                )
               ],
             ),
           ),
-          SizedBox(height: 16,),
+          SizedBox(
+            height: 16,
+          ),
           InkWell(
+            onTap: () {
+              if (_keyMenu != MenuItem.MENU_HOME) {
+                Navigator.of(context).pop();
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Home()));
+              }
+            },
             child: Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
@@ -45,6 +73,13 @@ class DrawerMenu extends StatelessWidget{
             height: 8,
           ),
           InkWell(
+            onTap: () {
+              if (_keyMenu != MenuItem.MENU_SEARCH) {
+                Navigator.of(context).pop();
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Search()));
+              }
+            },
             child: Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
@@ -58,6 +93,13 @@ class DrawerMenu extends StatelessWidget{
             height: 8,
           ),
           InkWell(
+            onTap: () {
+              if (_keyMenu != MenuItem.MENU_CART) {
+                Navigator.of(context).pop();
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Cart()));
+              }
+            },
             child: Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
@@ -69,7 +111,15 @@ class DrawerMenu extends StatelessWidget{
           ),
           SizedBox(
             height: 8,
-          ),InkWell(
+          ),
+          InkWell(
+            onTap: (){
+              if (_keyMenu != MenuItem.MENU_PROFILE) {
+                Navigator.of(context).pop();
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Profile()));
+              }
+            },
             child: Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
@@ -83,6 +133,13 @@ class DrawerMenu extends StatelessWidget{
             height: 8,
           ),
           InkWell(
+            onTap: () {
+              if (_keyMenu != MenuItem.MENU_ABOUT) {
+                Navigator.of(context).pop();
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => AboutUs()));
+              }
+            },
             child: Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
@@ -96,6 +153,13 @@ class DrawerMenu extends StatelessWidget{
             height: 8,
           ),
           InkWell(
+            onTap: () {
+              if (_keyMenu != MenuItem.MENU_CONTACT_US) {
+                Navigator.of(context).pop();
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => ContactUs()));
+              }
+            },
             child: Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
@@ -109,8 +173,12 @@ class DrawerMenu extends StatelessWidget{
             height: 8,
           ),
           InkWell(
-            onTap: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Login()));
+            onTap: () {
+              if (_keyMenu != MenuItem.MENU_LOGIN_SIGNUP) {
+                Navigator.of(context).pop();
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Login()));
+              }
             },
             child: Container(
               width: double.infinity,
@@ -125,5 +193,4 @@ class DrawerMenu extends StatelessWidget{
       ),
     );
   }
-
 }

@@ -5,7 +5,6 @@ import 'package:ShoppingCart/utils/CustomColors.dart';
 import 'package:ShoppingCart/utils/CustomTextStyle.dart';
 import 'package:ShoppingCart/utils/MenuItem.dart';
 import 'package:ShoppingCart/utils/ResponsiveLayout.dart';
-import 'package:ShoppingCart/utils/ScreenLayout.dart';
 import 'package:flutter_web/material.dart';
 
 import 'package:ShoppingCart/pages/footer.dart';
@@ -35,14 +34,16 @@ class _LargeHomePageState extends State<LargeHomePage> {
   createScaffold(context) {
     return Scaffold(
       key: keyScaffold,
-      endDrawer: DrawerMenu(),
+      endDrawer: ResponsiveLayout.isSmallScreen(context)
+          ? DrawerMenu(MenuItem.MENU_HOME)
+          : null,
       body: Builder(builder: (context) {
         return ListView(
           children: <Widget>[
             Stack(
               children: <Widget>[
                 HomeSlider(context),
-                Header(context,MenuItem.MENU_HOME),
+                Header(context, MenuItem.MENU_HOME),
               ],
             ),
             gridProductSection(context),

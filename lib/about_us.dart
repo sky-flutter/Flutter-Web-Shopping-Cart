@@ -21,7 +21,7 @@ class AboutUs extends StatelessWidget {
   createScaffold(context) {
     return Scaffold(
       key: keyScaffold,
-      endDrawer: DrawerMenu(),
+      endDrawer: DrawerMenu(MenuItem.MENU_ABOUT),
       body: Builder(builder: (context) {
         return ListView(
           children: <Widget>[
@@ -29,7 +29,7 @@ class AboutUs extends StatelessWidget {
             slider(),
             GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: getGridCount(context), childAspectRatio: 1.1),
+                  crossAxisCount: getGridCount(context), childAspectRatio: childAspectRatio),
               itemBuilder: (context, position) {
                 return createList()[position];
               },
@@ -63,7 +63,7 @@ class AboutUs extends StatelessWidget {
     } else if (ResponsiveLayout.isMediumScreen(context)) {
       sliderHeight = MediaQuery.of(context).size.height / 2;
       sliderHeaderFontSize = 30;
-      childAspectRatio = 1.2;
+      childAspectRatio = 1.25;
     } else {
       sliderHeight = MediaQuery.of(context).size.height / 3;
       sliderHeaderFontSize = 20;
@@ -119,7 +119,7 @@ class AboutUs extends StatelessWidget {
 
   createAboutSection(String imgName, String title, String desc) {
     return Container(
-      margin: EdgeInsets.all(24),
+      margin: EdgeInsets.only(left: 24,right: 24,top: 24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,

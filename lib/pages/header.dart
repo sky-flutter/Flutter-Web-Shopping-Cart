@@ -5,7 +5,10 @@ import 'package:flutter_web/material.dart';
 
 import '../about_us.dart';
 import '../cart.dart';
+import '../contact_us.dart';
 import '../login.dart';
+import '../profile.dart';
+import '../search.dart';
 
 class Header extends StatelessWidget {
   double sliderHeight = 500;
@@ -74,14 +77,22 @@ class Header extends StatelessWidget {
             ),
             padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           ),
-          Container(
-            child: Text(
-              "Search",
-              style: CustomTextStyle.boldTextStyle.copyWith(
-                color: Colors.black,
+          GestureDetector(
+            onTap: (){
+              if (_keyMenu != MenuItem.MENU_SEARCH) {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Search()));
+              }
+            },
+            child: Container(
+              child: Text(
+                "Search",
+                style: CustomTextStyle.boldTextStyle.copyWith(
+                  color: Colors.black,
+                ),
               ),
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
             ),
-            padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           ),
           GestureDetector(
             onTap: () {
@@ -100,14 +111,22 @@ class Header extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
             ),
           ),
-          Container(
-            child: Text(
-              "Profile",
-              style: CustomTextStyle.boldTextStyle.copyWith(
-                color: Colors.black,
+          GestureDetector(
+            onTap: (){
+              if (_keyMenu != MenuItem.MENU_PROFILE) {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Profile()));
+              }
+            },
+            child: Container(
+              child: Text(
+                "Profile",
+                style: CustomTextStyle.boldTextStyle.copyWith(
+                  color: Colors.black,
+                ),
               ),
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
             ),
-            padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           ),
           GestureDetector(
             onTap: () {
@@ -126,14 +145,22 @@ class Header extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
             ),
           ),
-          Container(
-            child: Text(
-              "Contact Us",
-              style: CustomTextStyle.boldTextStyle.copyWith(
-                color: Colors.black,
+          GestureDetector(
+            onTap: (){
+              if (_keyMenu != MenuItem.MENU_CONTACT_US) {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => ContactUs()));
+              }
+            },
+            child: Container(
+              child: Text(
+                "Contact Us",
+                style: CustomTextStyle.boldTextStyle.copyWith(
+                  color: Colors.black,
+                ),
               ),
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
             ),
-            padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           ),
           GestureDetector(
             onTap: () {

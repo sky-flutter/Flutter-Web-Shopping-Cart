@@ -21,7 +21,7 @@ class Cart extends StatelessWidget {
   createScaffold(context) {
     return Scaffold(
       key: keyScaffold,
-      endDrawer: DrawerMenu(),
+      endDrawer: DrawerMenu(MenuItem.MENU_CART),
       body: Builder(builder: (context) {
         return ListView(
           children: <Widget>[
