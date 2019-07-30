@@ -17,6 +17,7 @@ This command is used to building a web means it generates a build folder and thi
   <li>Add Site name, set physical path of your build folder to generate above</li>
   <li>Assign any IP address and click OK</li>
   <li>In the Actions section, you can found browse the website.</li>
+</ul>
 
 You have successfully done the web deployment.
 If you want to deploy on web hosting simply you need to upload the build folder on the hosting server.
