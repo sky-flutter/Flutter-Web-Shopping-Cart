@@ -22,5 +22,5 @@ This command is used to building a web means it generates a build folder and thi
 You have successfully done the web deployment.
 If you want to deploy on web hosting simply you need to upload the build folder on the hosting server.
 
-Check live demo using https://grocfact.000webhostapp.com/#/ this link.
+Check live demo using https://flutter-web-shopping-car-3f2a6.web.app/#/ this link.
 
